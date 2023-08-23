@@ -1,26 +1,24 @@
 import { FeedbackSection, FeedbackTitle } from './FeedBackBtns.styled';
 
 export const FeedbackBtns = ({
-  onGoodClickBtn,
-  onNeutralClickBtn,
-  onBadClickBtn,
+  onLeaveFeedback: { onGood, onNeutral, onBad },
 }) => {
   return (
     <FeedbackSection>
       <FeedbackTitle>Please leave feedback</FeedbackTitle>
       <ul>
         <li>
-          <button onClick={onGoodClickBtn} value="good">
+          <button onClick={onGood} value="good">
             Good
           </button>
         </li>
         <li>
-          <button onClick={onNeutralClickBtn} value="neutral">
+          <button onClick={onNeutral} value="neutral">
             Neutral
           </button>
         </li>
         <li>
-          <button onClick={onBadClickBtn} value="bad">
+          <button onClick={onBad} value="bad">
             Bad
           </button>
         </li>
