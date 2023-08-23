@@ -1,11 +1,11 @@
-import { FeedbackSection } from './FeedBackBtns.styled';
+import { FeedbackSection, BtnsList } from './FeedBackBtns.styled';
 
 export const FeedbackBtns = ({
   onLeaveFeedback: { onGood, onNeutral, onBad },
 }) => {
   return (
     <FeedbackSection>
-      <ul>
+      <BtnsList>
         <li>
           <button onClick={onGood} value="good">
             Good
@@ -21,7 +21,7 @@ export const FeedbackBtns = ({
             Bad
           </button>
         </li>
-      </ul>
+      </BtnsList>
     </FeedbackSection>
   );
 };

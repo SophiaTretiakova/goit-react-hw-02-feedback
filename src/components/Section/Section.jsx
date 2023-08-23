@@ -1,10 +1,11 @@
 import { FeedbackTitle } from 'components/Feedback/FeedBackBtns.styled';
+import { MainSection } from './Section.styled';
 
 export const Section = ({ title, children }) => {
   return (
-    <section>
+    <MainSection>
       <FeedbackTitle>{title}</FeedbackTitle>
       {children}
-    </section>
+    </MainSection>
   );
 };

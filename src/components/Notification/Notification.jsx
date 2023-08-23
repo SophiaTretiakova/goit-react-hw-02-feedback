@@ -1,7 +1,9 @@
+import { StstisticsNoFeedback } from './Notification.styled';
+
 export const Notification = ({ message }) => {
   return (
-    <div>
+    <StstisticsNoFeedback>
       <p>{message}</p>
-    </div>
+    </StstisticsNoFeedback>
   );
 };
