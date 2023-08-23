@@ -1,7 +1,6 @@
 export const Statistics = ({ good, neutral, bad, total, positive }) => {
   return (
-    <section>
-      <h2>Statistics</h2>
+    <div>
       <ul>
         <li>
           <p>Good: {good}</p>
@@ -19,6 +18,6 @@ export const Statistics = ({ good, neutral, bad, total, positive }) => {
           <p>Positive feedback: {positive}%</p>
         </li>
       </ul>
-    </section>
+    </div>
   );
 };

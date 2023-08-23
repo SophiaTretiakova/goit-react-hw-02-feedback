@@ -1,11 +1,10 @@
-import { FeedbackSection, FeedbackTitle } from './FeedBackBtns.styled';
+import { FeedbackSection } from './FeedBackBtns.styled';
 
 export const FeedbackBtns = ({
   onLeaveFeedback: { onGood, onNeutral, onBad },
 }) => {
   return (
     <FeedbackSection>
-      <FeedbackTitle>Please leave feedback</FeedbackTitle>
       <ul>
         <li>
           <button onClick={onGood} value="good">
