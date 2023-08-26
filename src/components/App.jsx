@@ -13,27 +13,6 @@ export class App extends Component {
     feedbackReceived: false,
   };
 
-  onGoodClickBtn = () => {
-    this.setState(prevState => ({
-      good: prevState.good + 1,
-      feedbackReceived: true,
-    }));
-  };
-
-  onNeutralClickBtn = () => {
-    this.setState(prevState => ({
-      neutral: prevState.neutral + 1,
-      feedbackReceived: true,
-    }));
-  };
-
-  onBadClickBtn = () => {
-    this.setState(prevState => ({
-      bad: prevState.bad + 1,
-      feedbackReceived: true,
-    }));
-  };
-
   countTotalFeedback = () => {
     const { good, bad, neutral } = this.state;
     return good + bad + neutral;
@@ -44,18 +23,20 @@ export class App extends Component {
     return Math.round((good / this.countTotalFeedback()) * 100);
   };
 
+  addFeedBack = feedBack => {
+    this.setState(prevState => ({
+      [feedBack]: prevState[feedBack] + 1,
+      feedbackReceived: true,
+    }));
+  };
+
   render() {
     const { good, neutral, bad, feedbackReceived } = this.state;
-    const handlerClicks = {
-      onGood: this.onGoodClickBtn,
-      onNeutral: this.onNeutralClickBtn,
-      onBad: this.onBadClickBtn,
-    };
 
     return (
       <>
         <Section title="Please leave feedback">
-          <FeedbackBtns onLeaveFeedback={handlerClicks} />
+          <FeedbackBtns onLeaveFeedback={this.addFeedBack} />
         </Section>
         <Section title="Statistics">
           {feedbackReceived ? (

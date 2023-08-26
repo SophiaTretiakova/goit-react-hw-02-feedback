@@ -1,24 +1,37 @@
 import { FeedbackSection, BtnsList } from './FeedBackBtns.styled';
 import propTypes from 'prop-types';
 
-export const FeedbackBtns = ({
-  onLeaveFeedback: { onGood, onNeutral, onBad },
-}) => {
+export const FeedbackBtns = ({ onLeaveFeedback }) => {
   return (
     <FeedbackSection>
       <BtnsList>
         <li>
-          <button onClick={onGood} value="good">
+          <button
+            onClick={evt => {
+              onLeaveFeedback(evt.target.value);
+            }}
+            value="good"
+          >
             Good
           </button>
         </li>
         <li>
-          <button onClick={onNeutral} value="neutral">
+          <button
+            onClick={evt => {
+              onLeaveFeedback(evt.target.value);
+            }}
+            value="neutral"
+          >
             Neutral
           </button>
         </li>
         <li>
-          <button onClick={onBad} value="bad">
+          <button
+            onClick={evt => {
+              onLeaveFeedback(evt.target.value);
+            }}
+            value="bad"
+          >
             Bad
           </button>
         </li>
