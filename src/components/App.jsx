@@ -23,9 +23,9 @@ export class App extends Component {
     return Math.round((good / this.countTotalFeedback()) * 100);
   };
 
-  addFeedBack = feedBack => {
+  updateFeedbackCount = newFeedback => {
     this.setState(prevState => ({
-      [feedBack]: prevState[feedBack] + 1,
+      [newFeedback]: prevState[newFeedback] + 1,
       feedbackReceived: true,
     }));
   };
@@ -36,7 +36,7 @@ export class App extends Component {
     return (
       <>
         <Section title="Please leave feedback">
-          <FeedbackBtns onLeaveFeedback={this.addFeedBack} />
+          <FeedbackBtns onLeaveFeedback={this.updateFeedbackCount} />
         </Section>
         <Section title="Statistics">
           {feedbackReceived ? (
