@@ -1,5 +1,7 @@
 import { StstisticsList } from './Statistic.styled';
 
+import propTypes from 'prop-types';
+
 export const Statistics = ({ good, neutral, bad, total, positive }) => {
   return (
     <div>
@@ -22,4 +24,12 @@ export const Statistics = ({ good, neutral, bad, total, positive }) => {
       </StstisticsList>
     </div>
   );
+};
+// good, neutral, bad, total, positive
+Statistics.propTypes = {
+  good: propTypes.number,
+  neutral: propTypes.number,
+  bad: propTypes.number,
+  total: propTypes.number,
+  positive: propTypes.number,
 };

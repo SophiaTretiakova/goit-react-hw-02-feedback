@@ -55,7 +55,7 @@ export class App extends Component {
     return (
       <>
         <Section title="Please leave feedback">
-          <FeedbackBtns onLeaveFeedback={handlerClicks}></FeedbackBtns>
+          <FeedbackBtns onLeaveFeedback={handlerClicks} />
         </Section>
         <Section title="Statistics">
           {feedbackReceived ? (
@@ -65,12 +65,12 @@ export class App extends Component {
               bad={bad}
               total={this.countTotalFeedback()}
               positive={this.countPositiveFeedbackPercentage()}
-            ></Statistics>
+            />
           ) : (
             <Notification message="There is no feedback" />
           )}
         </Section>
-        <GlobalStyles></GlobalStyles>
+        <GlobalStyles />
       </>
     );
   }

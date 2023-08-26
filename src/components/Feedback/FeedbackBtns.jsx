@@ -1,4 +1,5 @@
 import { FeedbackSection, BtnsList } from './FeedBackBtns.styled';
+import propTypes from 'prop-types';
 
 export const FeedbackBtns = ({
   onLeaveFeedback: { onGood, onNeutral, onBad },
@@ -24,4 +25,10 @@ export const FeedbackBtns = ({
       </BtnsList>
     </FeedbackSection>
   );
+};
+
+FeedbackBtns.propTypes = {
+  onGood: propTypes.func,
+  onNeutral: propTypes.func,
+  onBad: propTypes.func,
 };
