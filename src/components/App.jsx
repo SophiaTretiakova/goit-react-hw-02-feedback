@@ -10,7 +10,6 @@ export class App extends Component {
     good: 0,
     neutral: 0,
     bad: 0,
-    feedbackReceived: false,
   };
 
   countTotalFeedback = () => {
@@ -26,12 +25,11 @@ export class App extends Component {
   updateFeedbackCount = newFeedback => {
     this.setState(prevState => ({
       [newFeedback]: prevState[newFeedback] + 1,
-      feedbackReceived: true,
     }));
   };
 
   render() {
-    const { good, neutral, bad, feedbackReceived } = this.state;
+    const { good, neutral, bad } = this.state;
 
     return (
       <>
@@ -39,7 +37,7 @@ export class App extends Component {
           <FeedbackBtns onLeaveFeedback={this.updateFeedbackCount} />
         </Section>
         <Section title="Statistics">
-          {feedbackReceived ? (
+          {this.countTotalFeedback() ? (
             <Statistics
               good={good}
               neutral={neutral}
